@@ -5,6 +5,7 @@ import { useState } from "react";
 import Search from "./components/search";
 import { Table } from "./components/table";
 import Pagination from "./components/pagination";
+import Sort from "./components/sort";
 
 function App() {
     const [data, setData] = useState({});
@@ -54,7 +55,12 @@ function App() {
                             setPage={setPage}
                         />
                     </div>
-                    <div className="filter-container"></div>
+                    <div className="filter-container">
+                        <Sort
+                            sort={sort}
+                            setSort={setSort}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
