@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Search from "./components/search";
 import { Table } from "./components/table";
+import Pagination from "./components/pagination";
 
 function App() {
     const [data, setData] = useState({});
@@ -46,6 +47,12 @@ function App() {
                 <div className="body">
                     <div className="table-container">
                         <Table movies={data?.movies ? data.movies : []} />
+                        <Pagination
+                            page={page}
+                            limit={data?.limit ? data.limit : 0}
+                            total={data?.total ? data.total : 0}
+                            setPage={setPage}
+                        />
                     </div>
                     <div className="filter-container"></div>
                 </div>
