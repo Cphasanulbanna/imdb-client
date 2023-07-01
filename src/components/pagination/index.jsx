@@ -1,5 +1,4 @@
 import React from "react";
-
 import styles from "./styles.module.css";
 
 const Pagination = ({ page, total, limit, setPage }) => {
@@ -8,23 +7,25 @@ const Pagination = ({ page, total, limit, setPage }) => {
     const selectPage = (newPage) => {
         setPage(newPage + 1);
     };
+
     return (
         <div className={styles.container}>
-            {totalPages > 0 && [
-                ...Array(totalPages).map((val, index) => (
-                    <button
-                        key={index}
-                        onClick={() => selectPage(index)}
-                        className={
-                            page === index + 1
-                                ? `${styles.page_btn}${styles.active}`
-                                : styles.page_btn
-                        }
-                    >
-                        {index + 1}
-                    </button>
-                )),
-            ]}
+            {totalPages > 0 &&
+                Array(totalPages)
+                    .fill()
+                    .map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => selectPage(index)}
+                            className={
+                                page === index + 1
+                                    ? `${styles.page_btn} ${styles.active}`
+                                    : styles.page_btn
+                            }
+                        >
+                            {index + 1}
+                        </button>
+                    ))}
         </div>
     );
 };
