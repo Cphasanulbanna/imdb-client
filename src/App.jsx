@@ -30,7 +30,20 @@ function App() {
     useEffect(() => {
         getAllMovies();
     }, [search, sort, filterGenre, page]);
-    return <div className="wrapper"></div>;
+    return (
+        <div className="wrapper">
+            <div className="container">
+                <div className="head">
+                    <img
+                        src="./assets/images/logo.png"
+                        alt="logo"
+                        className="logo"
+                    />
+                </div>
+                <div className="body"></div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
