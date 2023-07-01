@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./styles.module.css";
 
-const index = ({ setSearch }) => {
+const Search = ({ setSearch }) => {
     return (
         <input
             type="text"
@@ -13,4 +13,4 @@ const index = ({ setSearch }) => {
     );
 };
 
-export default index;
+export default Search;

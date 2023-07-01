@@ -2,6 +2,8 @@ import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import Search from "./components/search";
+import { Table } from "./components/table";
 
 function App() {
     const [data, setData] = useState({});
@@ -39,8 +41,14 @@ function App() {
                         alt="logo"
                         className="logo"
                     />
+                    <Search setSearch={(search) => setSearch(search)} />
                 </div>
-                <div className="body"></div>
+                <div className="body">
+                    <div className="table-container">
+                        <Table movies={data?.movies ? data.movies : []} />
+                    </div>
+                    <div className="filter-container"></div>
+                </div>
             </div>
         </div>
     );
