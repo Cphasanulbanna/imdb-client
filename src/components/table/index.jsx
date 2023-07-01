@@ -19,7 +19,7 @@ export const Table = ({ movies }) => {
                         <img
                             src={movie?.image}
                             alt="movie"
-                            className={styles.movie_image}
+                            className={styles.movie_img}
                         />
                         <p className={styles.movie_title}>
                             {movie.name} {movie.year}
@@ -40,9 +40,9 @@ export const Table = ({ movies }) => {
 
                     <div className={styles.rating_container}>
                         <img
-                            src="../../assets/images/star.png"
+                            src="star.png"
                             alt="star"
-                            className={styles.star_image}
+                            className={styles.star_img}
                         />
                         <p className={styles.movie_rating}>{movie.rating}</p>
                     </div>

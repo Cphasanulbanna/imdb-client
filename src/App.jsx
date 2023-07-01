@@ -8,6 +8,8 @@ import Pagination from "./components/pagination";
 import Sort from "./components/sort";
 import { Gnere } from "./components/genre";
 
+import "./App.css";
+
 function App() {
     const [data, setData] = useState({});
     const [sort, setSort] = useState({ sort: "rating", order: "desc" });
@@ -40,14 +42,14 @@ function App() {
             <div className="container">
                 <div className="head">
                     <img
-                        src="./assets/images/logo.png"
+                        src="logo.png"
                         alt="logo"
                         className="logo"
                     />
                     <Search setSearch={(search) => setSearch(search)} />
                 </div>
                 <div className="body">
-                    <div className="table-container">
+                    <div className="table_container">
                         <Table movies={data?.movies ? data.movies : []} />
                         <Pagination
                             page={page}
@@ -56,14 +58,14 @@ function App() {
                             setPage={setPage}
                         />
                     </div>
-                    <div className="filter-container">
+                    <div className="filter_container">
                         <Sort
                             sort={sort}
                             setSort={setSort}
                         />
                         <Gnere
                             filterGenre={filterGenre}
-                            genres={data?.genres ? data.genres : []}
+                            genres={data?.genre ? data.genre : []}
                             setFilterGenre={setFilterGenre}
                         />
                     </div>

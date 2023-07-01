@@ -1,13 +1,9 @@
 * {
-    margin: 0;
+    /* margin: 0;
     padding: 0;
     border: none;
     outline: none;
-    box-sizing: border-box;
-}
-body {
-    background-color: #f2f2f2;
-    overflow-x: hidden;
+    box-sizing: border-box; */
 }
 
 :root {
@@ -17,47 +13,10 @@ body {
         0px 1px 8px 0px rgb(0 0 0 / 12%);
 }
 
-.wrapper {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
-.container {
-    width: 1000px;
-    border-radius: 10px;
-    box-shadow: var(--box-shadow);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    background-color: #fff;
-}
-
-.head {
-    display: flex;
-    align-items: center;
-    height: 80px;
-    background: #000;
-    justify-content: space-between;
-}
-
-.body {
-    height: 500px;
-    display: flex;
-}
-.logo {
-    width: 100px;
-    object-fit: contain;
-    margin-left: 15px;
-}
-
-.table-container {
-    flex: 3;
-    position: relative;
-}
-
-.filter-container {
-    flex: 1;
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+        "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    color: var(--black);
+    background-color: #f2f2f2;
 }

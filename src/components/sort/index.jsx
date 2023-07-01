@@ -4,7 +4,7 @@ import styles from "./styles.modules.css";
 
 const Sort = ({ sort, setSort }) => {
     const onSelectChange = (e) => {
-        setSort({ sort: e.target.vale, order: sort?.order });
+        setSort({ sort: e.target.value, order: sort?.order });
     };
 
     const onArrowChange = () => {
@@ -15,11 +15,13 @@ const Sort = ({ sort, setSort }) => {
         }
     };
     return (
-        <div className={styles.container}>
+        <div
+            id="container"
+            className={styles.container}
+        >
             <p className={styles.sort_by}>Sort By:</p>
             <select
-                name=""
-                id=""
+                id="select"
                 className={styles.select}
                 defaultValue={sort?.sort}
                 onChange={onSelectChange}
@@ -28,6 +30,7 @@ const Sort = ({ sort, setSort }) => {
                 <option value="rating">Rating</option>
             </select>
             <button
+                id="btn-box"
                 className={styles.arrow_btn}
                 onClick={onArrowChange}
             >
