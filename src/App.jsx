@@ -6,6 +6,7 @@ import Search from "./components/search";
 import { Table } from "./components/table";
 import Pagination from "./components/pagination";
 import Sort from "./components/sort";
+import { Gnere } from "./components/genre";
 
 function App() {
     const [data, setData] = useState({});
@@ -59,6 +60,11 @@ function App() {
                         <Sort
                             sort={sort}
                             setSort={setSort}
+                        />
+                        <Gnere
+                            filterGenre={filterGenre}
+                            genres={data?.genres ? data.genres : []}
+                            setFilterGenre={setFilterGenre}
                         />
                     </div>
                 </div>
