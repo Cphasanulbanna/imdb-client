@@ -32,7 +32,7 @@ export const Table = ({ movies }) => {
                                 key={index}
                                 className={styles.movie_genre}
                             >
-                                {genre}
+                                {genre.name}
                                 {index !== movie.genre.lenght - 1 && "/"}
                             </p>
                         ))}

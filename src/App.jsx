@@ -6,7 +6,7 @@ import Search from "./components/search";
 import { Table } from "./components/table";
 import Pagination from "./components/pagination";
 import Sort from "./components/sort";
-import { Gnere } from "./components/genre";
+import { Genre } from "./components/genre";
 import { debounce } from "lodash";
 
 import "./App.css";
@@ -19,16 +19,17 @@ function App() {
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState("");
 
+    const [genreIds, setGenreIds] = useState([]);
+
     const BASE_URL = "http://localhost:5000/api/movies/";
 
-    console.log(data);
     const debouncedValue = useDebounce(search);
 
     const getAllMovies = async () => {
         try {
             const URL = `${BASE_URL}?page=${page}&sort=${sort.sort},${
                 sort.order
-            }&genre=${filterGenre.toString()}&search=${search}`;
+            }&genre=${genreIds.toString()}&search=${search}`;
 
             const response = await axios.get(URL);
             setData(response.data);
@@ -39,7 +40,8 @@ function App() {
 
     useEffect(() => {
         getAllMovies();
-    }, [debouncedValue, sort, filterGenre, page]);
+    }, [debouncedValue, sort, genreIds, page]);
+
     return (
         <div className="wrapper">
             <div className="container">
@@ -56,7 +58,7 @@ function App() {
                 </div>
                 <div className="body">
                     <div className="table_container">
-                        <Table movies={data?.movies ? data.movies : []} />
+                        <Table movies={data?.movies ? data?.movies : []} />
                         <Pagination
                             page={page}
                             limit={data?.limit ? data.limit : 0}
@@ -69,10 +71,11 @@ function App() {
                             sort={sort}
                             setSort={setSort}
                         />
-                        <Gnere
-                            filterGenre={filterGenre}
+                        <Genre
                             genres={data?.genre ? data.genre : []}
-                            setFilterGenre={setFilterGenre}
+                            setGenreIds={setGenreIds}
+                            genreIds={genreIds}
+                            setPage={setPage}
                         />
                     </div>
                 </div>
