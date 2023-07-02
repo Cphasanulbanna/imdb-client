@@ -7,8 +7,10 @@ import { Table } from "./components/table";
 import Pagination from "./components/pagination";
 import Sort from "./components/sort";
 import { Gnere } from "./components/genre";
+import { debounce } from "lodash";
 
 import "./App.css";
+import { useDebounce } from "./hooks/useDebounce";
 
 function App() {
     const [data, setData] = useState({});
@@ -20,6 +22,7 @@ function App() {
     const BASE_URL = "http://localhost:5000/api/movies/";
 
     console.log(data);
+    const debouncedValue = useDebounce(search);
 
     const getAllMovies = async () => {
         try {
@@ -36,7 +39,7 @@ function App() {
 
     useEffect(() => {
         getAllMovies();
-    }, [search, sort, filterGenre, page]);
+    }, [debouncedValue, sort, filterGenre, page]);
     return (
         <div className="wrapper">
             <div className="container">

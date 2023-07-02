@@ -8,7 +8,7 @@ const Search = ({ setSearch }) => {
             type="text"
             placeholder="Search"
             className={styles.search}
-            onChange={({ currentTarget: input }) => setSearch(input.value)}
+            onChange={({ currentTarget: input }) => setSearch(input.value.toString())}
         />
     );
 };
