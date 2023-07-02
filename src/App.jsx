@@ -49,7 +49,10 @@ function App() {
                         alt="logo"
                         className="logo"
                     />
-                    <Search setSearch={(search) => setSearch(search)} />
+                    <Search
+                        setPage={setPage}
+                        setSearch={(search) => setSearch(search)}
+                    />
                 </div>
                 <div className="body">
                     <div className="table_container">
